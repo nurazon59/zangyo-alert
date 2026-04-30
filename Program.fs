@@ -1,4 +1,9 @@
-﻿open System.IO
-open System.Text
+open System.IO
+open FSharp.Data
 
-let text = "testdata/sample.txt" |> File.ReadAllText |> printfn "%s"
+type Sample = JsonProvider<""" {"name":"x"} """>
+
+Path.Combine(__SOURCE_DIRECTORY__, "testdata", "sample.json")
+|> Sample.Load
+|> _.Name
+|> printfn "%s"
