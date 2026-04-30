@@ -7,3 +7,5 @@ Path.Combine(__SOURCE_DIRECTORY__, "testdata", "sample.json")
 |> Sample.Load
 |> _.Name
 |> printfn "%s"
+
+SocialInsurance.printGrades ()
