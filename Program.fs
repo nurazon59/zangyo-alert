@@ -1,2 +1,4 @@
-﻿// For more information see https://aka.ms/fsharp-console-apps
-printfn "Hello from F#"
+﻿open System.IO
+open System.Text
+
+let text = "testdata/sample.txt" |> File.ReadAllText |> printfn "%s"
