@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="SocialInsurance.fs" />
+    <Compile Include="Grades.fs" />
     <Compile Include="Program.fs" />
     <Compile Include="Config.fs" />
   </ItemGroup>
