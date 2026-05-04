@@ -1,7 +1,7 @@
+module Config
+
 open System.IO
 open FSharp.Data
-
-
 
 type ConfigJson =
     JsonProvider<"""
