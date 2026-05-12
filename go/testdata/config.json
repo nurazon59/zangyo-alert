@@ -1,0 +1,15 @@
+{
+  "baseSalary": 400000,
+  "fixedOvertime": 50.0,
+  "fixedOverSalary": 80000,
+  "fixedBenefits": 10000,
+  "hourlyRate": 2000,
+  "overtimeRates": {
+    "lateNight": 0.25,
+    "holiday": 1.35
+  },
+  "benefits": [
+    { "name": "住宅支援", "unitAmount": 10000 },
+    { "name": "食事補助", "unitAmount": 500 }
+  ]
+}

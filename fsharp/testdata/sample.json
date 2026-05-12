@@ -1,0 +1,9 @@
+{
+  "BaseSalary": 300000,
+  "FixedOvertime": 30,
+  "FixedOverSalary": 50000,
+  "FixedBenefits": {
+    "Housing": 30000,
+    "Transport": 10000
+  }
+}
