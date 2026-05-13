@@ -3,7 +3,7 @@ package main
 import "testing"
 
 func TestComputeAlert_TopGradeNoAlert(t *testing.T) {
-	cfg := Config{Benefits: []Benefit{{Name: "住宅", UnitAmount: 10000}}}
+	cfg := Config{RawConfig: RawConfig{Benefits: []Benefit{{Name: "住宅", UnitAmount: 10000}}}}
 	j := GradeJudgement{StandardAmount: 1390000, Pension: 50, NextThreshold: nil}
 	a := cfg.ComputeAlert(j, nil, 1500000)
 	if a.AmountUntil != 0 || a.AllowedHours != 0 {
@@ -15,13 +15,13 @@ func TestComputeAlert_TopGradeNoAlert(t *testing.T) {
 }
 
 func TestComputeAlert_RemainingMonths(t *testing.T) {
-	cfg := Config{
+	cfg := Config{RawConfig: RawConfig{
 		HourlyRate: 2000,
 		Benefits: []Benefit{
 			{Name: "住宅", UnitAmount: 10000},
 			{Name: "食事", UnitAmount: 500},
 		},
-	}
+	}}
 	threshold := 310000
 	j := GradeJudgement{StandardAmount: 300000, Pension: 22, NextThreshold: &threshold}
 	entries := []MonthlyEntry{

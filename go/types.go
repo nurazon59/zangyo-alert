@@ -27,7 +27,7 @@ type OvertimeRates struct {
 	Holiday   float64 `json:"holiday"`
 }
 
-type Config struct {
+type RawConfig struct {
 	BaseSalary          int           `json:"baseSalary"`
 	FixedOvertime       float64       `json:"fixedOvertime"`
 	FixedOverSalary     int           `json:"fixedOverSalary"`
@@ -36,7 +36,11 @@ type Config struct {
 	MonthlyWorkingHours float64       `json:"monthlyWorkingHours"`
 	OvertimeRates       OvertimeRates `json:"overtimeRates"`
 	Benefits            []Benefit     `json:"benefits"`
-	HourlyRateDerived   bool
+}
+
+type Config struct {
+	RawConfig
+	HourlyRateDerived bool
 }
 
 type GradeRow struct {

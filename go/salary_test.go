@@ -26,12 +26,12 @@ func TestMonthlyGross_Actual(t *testing.T) {
 }
 
 func TestMonthlyGross_Estimate(t *testing.T) {
-	cfg := Config{
+	cfg := Config{RawConfig: RawConfig{
 		BaseSalary:      300000,
 		FixedOverSalary: 60000,
 		FixedBenefits:   40000,
 		HourlyRate:      2000,
-	}
+	}}
 	entry := MonthlyEntry{
 		Input: MonthInput{ExtraHours: 5},
 	}
@@ -54,14 +54,14 @@ func TestAverage(t *testing.T) {
 }
 
 func baseRateConfig() Config {
-	return Config{
+	return Config{RawConfig: RawConfig{
 		BaseSalary:      300000,
 		FixedOvertime:   50.0,
 		FixedOverSalary: 80000,
 		FixedBenefits:   10000,
 		HourlyRate:      2000,
 		OvertimeRates:   OvertimeRates{LateNight: 0.25, Holiday: 1.35},
-	}
+	}}
 }
 
 func TestOvertimePayFromAttendance_WithinFixedOvertime(t *testing.T) {
