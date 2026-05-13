@@ -97,3 +97,6 @@ spec:
           strict_required_status_checks_policy: true
           contexts:
             - context: ci
+      bypass_actors:
+        - role: admin
+          bypass_mode: always
