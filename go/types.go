@@ -28,13 +28,13 @@ type OvertimeRates struct {
 }
 
 type Config struct {
-	BaseSalary        int           `json:"baseSalary"`
-	FixedOvertime     float64       `json:"fixedOvertime"`
-	FixedOverSalary   int           `json:"fixedOverSalary"`
-	FixedBenefits     int           `json:"fixedBenefits"`
-	HourlyRate        float64       `json:"hourlyRate"`
-	OvertimeRates     OvertimeRates `json:"overtimeRates"`
-	Benefits          []Benefit     `json:"benefits"`
+	BaseSalary      int           `json:"baseSalary"`
+	FixedOvertime   float64       `json:"fixedOvertime"`
+	FixedOverSalary int           `json:"fixedOverSalary"`
+	FixedBenefits   int           `json:"fixedBenefits"`
+	HourlyRate      float64       `json:"hourlyRate"`
+	OvertimeRates   OvertimeRates `json:"overtimeRates"`
+	Benefits        []Benefit     `json:"benefits"`
 }
 
 type GradeRow struct {
