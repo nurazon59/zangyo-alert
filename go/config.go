@@ -19,7 +19,11 @@ func LoadConfig(path string) (Config, error) {
 		cfg.Benefits = []Benefit{}
 	}
 	if cfg.HourlyRate <= 0 {
-		return Config{}, fmt.Errorf("config %s: hourlyRate must be > 0", path)
+		if cfg.MonthlyWorkingHours <= 0 {
+			cfg.MonthlyWorkingHours = 160.0
+		}
+		cfg.HourlyRate = float64(cfg.BaseSalary) / cfg.MonthlyWorkingHours
+		cfg.HourlyRateDerived = true
 	}
 	return cfg, nil
 }

@@ -6,6 +6,10 @@
 # dotenv files
 .env
 
+# build/tool caches
+.gocache/
+.claude/
+
 # User-specific files
 *.rsuser
 *.suo
