@@ -31,6 +31,10 @@ func Run(args Args) int {
 		fmt.Fprintln(args.Stderr, err)
 		return 1
 	}
+	if cfg.HourlyRateDerived {
+		fmt.Fprintf(args.Stdout, "[時給]  %s（自動計算: 基本給 %s ÷ %.1fh/月）\n",
+			yen(int(cfg.HourlyRate)), yen(cfg.BaseSalary), cfg.MonthlyWorkingHours)
+	}
 
 	table, err := LoadGrades(args.GradesPath)
 	if err != nil {
